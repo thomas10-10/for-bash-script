@@ -5,7 +5,7 @@ script.sh
   for i in "$@"
   do
 	  nom_variable="${i#*--}"
-    nom_variable="${nom_variable%%=*}"
+    	  nom_variable="${nom_variable%%=*}"
 	  valeur_variable="${i#*=}"
 	  [[ $MyOpts =~ (^|[[:space:]])"$nom_variable"($|[[:space:]]) ]] &&  declare $nom_variable="$valeur_variable"  || { echo "error: option  [$nom_variable] unknow " ;  exit 1 ; }
 
